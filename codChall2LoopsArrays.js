@@ -102,11 +102,7 @@ const primeOrNot = (number) => {
                 break;
             }
         }
-        if (isPrime) {
-            return true;
-        } else {
-            return false;
-        }
+        return isPrime;
     } else {
         return false;
     }
@@ -139,6 +135,26 @@ console.log(digitSum(9434)); --- output: 2 (9+4+3+4=20, 2+0=2)*/
 //--------------------------------------------------------------------------------------------
 
 //14. Print the first 100 prime numbers
+const first100Primes = (num) => {
+    for (let i = 1; i <= num; i++) {
+        if (i == 1 || i == 0) {
+            continue;
+        }
+
+        flag = 1;
+
+        for (j = 2; j <= i / 2; ++j) {
+            if (i % j == 0) {
+                flag = 0;
+                break;
+            }
+        }
+        if (flag == 1) {
+            console.log(i + ' ');
+        }
+    }
+};
+//first100Primes(541);
 
 //--------------------------------------------------------------------------------------------
 
